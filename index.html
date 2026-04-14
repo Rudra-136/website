@@ -1,8 +1,308 @@
 <!DOCTYPE html>
-<html>
-    <head>Website</head>
-    <title>main page</title>
-    <body>
-        coming soon
-    </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENLIR AVANT SYSTÈME</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+        background:#000;
+        color:white;
+        overflow-x:hidden;
+    }
+
+    img{
+        max-width:100%;
+        display:block;
+    }
+
+    .section{
+        position:relative;
+        width:100%;
+    }
+
+    .overlay{
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.35);
+    }
+
+    /* TOP HEADER */
+    .topbar{
+        background:#efefef;
+        color:#111;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:18px 50px;
+    }
+
+    .topbar h1{
+        font-size:28px;
+        letter-spacing:4px;
+        font-weight:300;
+    }
+
+    .topbar .right{
+        text-align:right;
+    }
+
+    .topbar .right h2{
+        font-size:36px;
+        font-weight:600;
+    }
+
+    .topbar .right p{
+        font-size:14px;
+    }
+
+    .subbar{
+        background:#1c2d42;
+        text-align:center;
+        padding:8px;
+        font-size:14px;
+        letter-spacing:1px;
+    }
+
+    /* HERO */
+    .hero{
+        background:url("C:/enlir/hero-bg.jpg") center/cover no-repeat;
+        min-height:550px;
+        position:relative;
+        padding:70px;
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+        max-width:600px;
+    }
+
+    .hero h2{
+        font-size:38px;
+        margin-bottom:20px;
+        font-weight:500;
+    }
+
+    .hero p{
+        line-height:1.7;
+        font-size:18px;
+        color:#ddd;
+    }
+
+    .hero-laptop{
+        position:absolute;
+        right:60px;
+        top:60px;
+        width:42%;
+        z-index:2;
+    }
+
+    /* DIVISION BOXES */
+    .divisions{
+        background:url("C:/enlir/ocean-bg.jpg") center/cover no-repeat;
+        padding:60px 70px;
+    }
+
+    .division-card{
+        background:rgba(20,20,20,0.55);
+        backdrop-filter:blur(4px);
+        padding:25px;
+        margin-bottom:20px;
+        border-left:4px solid #5cc9ff;
+    }
+
+    .division-card h3{
+        font-size:26px;
+        margin-bottom:10px;
+    }
+
+    .division-card p{
+        color:#ddd;
+        line-height:1.6;
+    }
+
+    /* PRODUCT BANNERS */
+    .banner{
+        position:relative;
+        height:320px;
+        display:flex;
+        align-items:center;
+        padding-left:80px;
+        font-size:70px;
+        letter-spacing:4px;
+        font-weight:300;
+        text-shadow:0 0 15px rgba(0,0,0,0.8);
+    }
+
+    .banner::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.25);
+    }
+
+    .banner span{
+        position:relative;
+        z-index:2;
+        background:rgba(255,255,255,0.12);
+        padding:15px 35px;
+        backdrop-filter:blur(6px);
+    }
+
+    .seawarden{ background:url("C:/enlir/seawarden.jpg") center/cover no-repeat; }
+    .halqar{ background:url("C:/enlir/halqar.jpg") center/cover no-repeat; justify-content:flex-end; padding-right:80px; }
+    .helios{ background:url("C:/enlir/helios.jpg") center/cover no-repeat; }
+    .ice{ background:url("C:/enlir/ice.jpg") center/cover no-repeat; justify-content:flex-end; padding-right:80px; }
+
+    /* FOOTER */
+    footer{
+        background:#050505;
+        padding:45px 60px;
+        border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-top{
+        font-size:24px;
+        margin-bottom:20px;
+    }
+
+    .footer-bottom{
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        color:#aaa;
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    @media(max-width:900px){
+        .hero{
+            padding:30px;
+        }
+
+        .hero-laptop{
+            position:relative;
+            width:100%;
+            right:auto;
+            top:auto;
+            margin-top:30px;
+        }
+
+        .banner{
+            font-size:40px;
+            height:220px;
+            padding-left:30px;
+        }
+
+        .topbar{
+            flex-direction:column;
+            gap:20px;
+            text-align:center;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="topbar">
+            <h1>ENLIR AVANT<br>SYSTÈME</h1>
+
+            <div class="right">
+                <h2>SeaWarden</h2>
+                <p>Autonomy in the blue</p>
+            </div>
+        </div>
+
+        <div class="subbar">
+            Defense | Aviation | Energy Systems | Simulations | Semantic Systems
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h2>Engineering Decision-Capable Systems</h2>
+            <p>
+                Enlir Avant Système is a research-driven engineering company building
+                next-generation autonomous, intelligence, and simulation systems
+                across defense, aviation, and industrial domains.
+                <br><br>
+                We operate at the intersection of Autonomous Systems,
+                Operational Intelligence, Digital Twin Simulation,
+                and Semantic & Ontological Computing.
+            </p>
+        </div>
+
+        <img src="C:/enlir/laptop-ui.png" class="hero-laptop">
+    </section>
+
+    <section class="divisions">
+
+        <div class="division-card">
+            <h3>Defense & Autonomous Systems Division (SeaWarden)</h3>
+            <p>
+                Building distributed autonomous warfare and intelligence systems designed
+                for resilience, decision-speed dominance, and multi-domain operational coherence.
+            </p>
+        </div>
+
+        <div class="division-card">
+            <h3>Energy Systems Division (ICE R&D)</h3>
+            <p>
+                Next-generation ICE systems achieving significantly enhanced efficiency
+                and power output within compact, scalable architectures.
+            </p>
+        </div>
+
+        <div class="division-card">
+            <h3>Drone Intelligence & Digital Mine Analytics Division</h3>
+            <p>
+                High-precision aerial surveying, volumetrics, and ISR-driven industrial intelligence.
+            </p>
+        </div>
+
+        <div class="division-card">
+            <h3>Semantic & Ontological Systems Division</h3>
+            <p>
+                Designing ontology-driven systems enabling machines to interpret,
+                reason, and act on complex real-world data.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="banner seawarden"><span>SeaWarden</span></section>
+    <section class="banner halqar"><span>Halqar</span></section>
+    <section class="banner helios"><span>Helios</span></section>
+    <section class="banner ice"><span>ICE</span></section>
+
+    <footer>
+        <div class="footer-top">Backed By Veterans and Expert Engineers.</div>
+
+        <div class="footer-bottom">
+            <div>
+                Mr. Sanjay Kr Pandey, Group Captain (Retd.) | Indian Air Force<br>
+                Ex-Director Strategy & Corporate Development, Government of India
+            </div>
+
+            <div style="text-align:right;">
+                enliravant@gmail.com<br>
+                +91-9142164326
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
