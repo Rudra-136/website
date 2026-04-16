@@ -1,64 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+  <title>ENLIR AVANT SYSTÈME</title>
+
+  <style>
+    .brand-font {
+      font-family: 'Questrial', sans-serif;
+    }
+  </style>
 </head>
+
 <body class="bg-white">
 
-  <!-- HEADER -->
-  <header class="bg-white px-10 py-6">
+  <!-- TOP HEADER -->
+  <header class="bg-[#EDEDED] px-10 py-8">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <!-- Left Branding -->
-      <div class="flex items-center gap-4">
-        <img src="logo.png" class="w-16 h-16" alt="Logo">
-        <div>
-          <h1 class="text-3xl tracking-widest font-light">ENLIR AVANT</h1>
-          <h2 class="text-3xl tracking-widest font-light">SYSTÈME</h2>
+      <!-- LEFT SIDE -->
+      <div class="flex items-center gap-5">
+        <img src="logo.png" alt="Logo" class="w-20 h-20 object-contain">
+
+        <div class="brand-font text-black uppercase tracking-[0.18em] leading-tight">
+          <h1 class="text-5xl">ENLIR AVANT</h1>
+          <h1 class="text-5xl">SYSTÈME</h1>
         </div>
       </div>
 
-      <!-- Right Product Name -->
-      <div class="text-right">
-        <h2 class="text-5xl font-medium">SeaWarden</h2>
-        <p class="text-xl text-gray-700">Autonomy in the blue</p>
+      <!-- RIGHT SIDE -->
+      <div class="text-right brand-font">
+        <h2 class="text-6xl text-black">SeaWarden</h2>
+        <p class="text-2xl text-gray-700">Autonomy in the Blue</p>
       </div>
 
     </div>
   </header>
 
-  <!-- NAV STRIP -->
-  <nav class="bg-[#0B2B4A] text-white py-3">
-    <div class="max-w-7xl mx-auto flex justify-center gap-8 text-lg tracking-wide">
-      <span>Defense</span>
+  <!-- NAVIGATION BAR -->
+  <nav class="bg-[#0B2B4A] py-4">
+    <div class="max-w-7xl mx-auto flex justify-center gap-6 text-white brand-font text-xl tracking-wide">
+
+      <span class="hover:text-cyan-300 transition cursor-pointer">Defense</span>
       <span>|</span>
-      <span>Aviation</span>
+
+      <span class="hover:text-cyan-300 transition cursor-pointer">Aviation</span>
       <span>|</span>
-      <span>Energy Systems</span>
+
+      <span class="hover:text-cyan-300 transition cursor-pointer">Energy Systems</span>
       <span>|</span>
-      <span>Simulations</span>
+
+      <span class="hover:text-cyan-300 transition cursor-pointer">Simulations</span>
       <span>|</span>
-      <span>Semantic Systems</span>
+
+      <span class="hover:text-cyan-300 transition cursor-pointer">Semantic Systems</span>
+
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="relative h-[700px]">
-    <img src="hero-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <!-- HERO SECTION -->
+  <section class="relative h-[700px] overflow-hidden">
 
-    <div class="absolute inset-0 bg-black/30"></div>
+    <!-- Background Image -->
+    <img src="drm11.jpeg"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Hero Background">
 
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/35"></div>
+
+    <!-- Text Box -->
     <div class="relative max-w-7xl mx-auto h-full flex items-center px-10">
-      <div class="bg-black/50 backdrop-blur-sm p-8 max-w-2xl text-white rounded-xl">
-        <h2 class="text-4xl font-semibold mb-4">
-          Autonomous Intelligence Systems
+
+      <div class="bg-black/50 backdrop-blur-sm p-10 rounded-xl max-w-3xl text-white">
+
+        <h2 class="brand-font text-4xl mb-6 tracking-wide">
+          Building Next-Generation Autonomous Systems
         </h2>
 
-        <p class="text-lg leading-relaxed text-gray-200">
-          Building next-generation autonomous, intelligence, and simulation systems
-          across defense, aviation, and industrial domains.
+        <p class="text-lg leading-relaxed text-gray-200 mb-6">
+          Enlir Avant Système is a research-driven engineering company building
+          next-generation autonomous, intelligence, and simulation systems across
+          defense, aviation, and industrial domains.
         </p>
+
+        <ul class="list-disc ml-6 text-lg text-gray-200 space-y-2">
+          <li>Autonomous Systems</li>
+          <li>Operational Intelligence</li>
+          <li>Digital Twin Simulation</li>
+          <li>Semantic & Ontological Computing</li>
+        </ul>
+
       </div>
+
     </div>
   </section>
 
