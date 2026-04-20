@@ -1,107 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-
-  <title>ENLIR AVANT SYSTÈME</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enlir Avant Système</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Rajdhani: closest free equivalent to Beautifully Delicious — bold, structured, modern display -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    .brand-font {
-      font-family: 'Questrial', sans-serif;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --off-white: #e8e8e8;
+      --mid-grey: #aaaaaa;
+      --dim-grey: #555555;
+      --accent: #c8d8ff;
+      --nav-border: rgba(255,255,255,0.18);
+      --font-display: 'Rajdhani', sans-serif;
+      --font-body: 'Barlow Condensed', sans-serif;
+    }
+
+    html, body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 64px;
+      border-bottom: 1px solid var(--nav-border);
+      background: var(--black);
+      z-index: 100;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px;
+    }
+
+    .logo-icon {
+      width: 70px;
+      height: 70px;
+      /* Replace src with logo.png when ready */
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo-wordmark {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .logo-wordmark span {
+      display: block;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: var(--mid-grey);
+      margin-top: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    nav a {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      text-decoration: none;
+      padding: 0 18px;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav a:not(:last-child)::after {
+      content: '|';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--dim-grey);
+      font-size: 10px;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    /* ─── HERO SECTION ─────────────────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      /* 16:9-ish aspect — adjust as needed */
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /* REPLACE: set background-image: url('herobg.jpg'); */
+      background-image: url('herobg.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.55;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.15) 40%,
+        rgba(0,0,0,0.55) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 40px;
+      max-width: 760px;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 52px);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--white);
+      text-shadow: 0 2px 24px rgba(0,0,0,0.7);
+    }
+
+    /* ─── SECTION LABEL ────────────────────────────── */
+    .section-label {
+      padding: 22px 32px;
+      border-bottom: 1px solid var(--nav-border);
+      background: var(--black);
+    }
+
+    .section-label p {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+    }
+
+    /* ─── THREE VERTICALS GRID ─────────────────────── */
+    .verticals-wrapper {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-top: none;
+    }
+
+    .verticals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      min-height: 380px;
+    }
+
+    .vertical-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .vertical-card:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .vertical-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      transition: opacity 0.4s ease, transform 0.6s ease;
+    }
+
+    /* Each card gets a unique placeholder bg name */
+    .card-seawarden .vertical-card-bg {
+      background-image: url('seawardenbg.jpg');
+    }
+
+    .card-valak .vertical-card-bg {
+      background-image: url('valakbg.png');
+    }
+
+    .card-halqar .vertical-card-bg {
+      background-image: url('halqarbg.jpeg');
+    }
+
+    .vertical-card:hover .vertical-card-bg {
+      opacity: 0.7;
+      transform: scale(1.04);
+    }
+
+    .vertical-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0.5) 60%,
+        rgba(0,0,0,0.82) 100%
+      );
+      transition: background 0.4s ease;
+    }
+
+    .vertical-card:hover .vertical-card-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.35) 60%,
+        rgba(0,0,0,0.75) 100%
+      );
+    }
+
+    .vertical-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 24px 22px 28px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+    }
+
+    .vertical-card-desc {
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+
+    .vertical-card-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.06em;
+      text-transform: none;
+      color: var(--white);
+      margin-top: auto;
+    }
+
+    /* ─── BOTTOM SINGLE-CARD (SeaWarden) ───────────── */
+    .bottom-feature {
+      position: relative;
+      width: 100%;
+      min-height: 220px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: #080808;
+      cursor: pointer;
+    }
+
+    .bottom-feature-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('seawarden_feature_bg.jpg');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.35;
+      transition: opacity 0.4s ease;
+    }
+
+    .bottom-feature:hover .bottom-feature-bg {
+      opacity: 0.5;
+    }
+
+    .bottom-feature-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%);
+    }
+
+    .bottom-feature-content {
+      position: relative;
+      z-index: 2;
+      padding: 32px 32px 36px;
+    }
+
+    .bottom-feature-content h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.07em;
+      color: var(--white);
+    }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      padding: 20px 32px;
+      border-top: 1px solid var(--nav-border);
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dim-grey);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        height: auto;
+        padding: 14px 20px;
+        gap: 10px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 0;
+      }
+
+      nav a {
+        font-size: 10px;
+        padding: 0 10px;
+      }
+
+      .verticals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vertical-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .hero-content h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
+<body>
 
-<body class="bg-white">
-
-  <!-- TOP HEADER -->
-  <header class="bg-[#EDEDED] px-10 py-8">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-
-      <!-- LEFT SIDE -->
-      <div class="flex items-center gap-5">
-        <img src="logo.png" alt="Logo" class="w-20 h-20 object-contain">
-
-        <div class="brand-font text-black uppercase tracking-[0.18em] leading-tight">
-          <h2 class="text-5xl">ENLIR AVANT</h2>
-          <h2 class="text-5xl">SYSTÈME</h2>
-        </div>
+  <!-- ── HEADER ──────────────────────────────────────── -->
+  <header>
+    <div class="logo-area">
+      <div class="logo-icon">
+        <img src="logo.png" alt="Enlir Avant Système Logo" />
       </div>
-
-      <!-- RIGHT SIDE -->
-      <div class="text-right brand-font">
-        <h2 class="text-6xl text-black">SeaWarden</h2>
-        <p class="text-2xl text-gray-700">Autonomy in the Blue</p>
+      <div class="logo-wordmark">
+        Enlir Avant Système
+        <span>Defense &nbsp;|&nbsp; Aviation &nbsp;|&nbsp; Energy</span>
       </div>
-
     </div>
+
+    <nav>
+      <a href="#">Defense</a>
+      <a href="#">Aviation</a>
+      <a href="#">Energy Systems</a>
+      <a href="#">Simulations</a>
+      <a href="#">Semantic Systems</a>
+    </nav>
   </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="bg-[#0B2B4A] py-4">
-    <div class="max-w-7xl mx-auto flex justify-center gap-6 text-white brand-font text-xl tracking-wide">
-
-      <span class="hover:text-cyan-300 transition cursor-pointer">Defense</span>
-      <span>|</span>
-
-      <span class="hover:text-cyan-300 transition cursor-pointer">Aviation</span>
-      <span>|</span>
-
-      <span class="hover:text-cyan-300 transition cursor-pointer">Energy Systems</span>
-      <span>|</span>
-
-      <span class="hover:text-cyan-300 transition cursor-pointer">Simulations</span>
-      <span>|</span>
-
-      <span class="hover:text-cyan-300 transition cursor-pointer">Semantic Systems</span>
-
-    </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="relative h-[700px] overflow-hidden">
-
-    <!-- Background Image -->
-    <img src="drm11.jpeg"
-         class="absolute inset-0 w-full h-full object-cover"
-         alt="Hero Background">
-
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/35"></div>
-
-    <!-- Text Box -->
-    <div class="relative max-w-7xl mx-auto h-full flex items-center px-10">
-
-      <div class="bg-black/50 backdrop-blur-sm p-10 rounded-xl max-w-3xl text-white">
-
-        <h2 class="brand-font text-4xl mb-6 tracking-wide">
-          Building Next-Generation Autonomous Systems
-        </h2>
-
-        <p class="text-lg leading-relaxed text-gray-200 mb-6">
-          Enlir Avant Système is a research-driven engineering company building
-          next-generation autonomous, intelligence, and simulation systems across
-          defense, aviation, and industrial domains.
-        </p>
-
-        <ul class="list-disc ml-6 text-lg text-gray-200 space-y-2">
-          <li>Autonomous Systems</li>
-          <li>Operational Intelligence</li>
-          <li>Digital Twin Simulation</li>
-          <li>Semantic & Ontological Computing</li>
-        </ul>
-
-      </div>
-
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Engineering the<br />Decision&#8209;Capable<br />Battlespace</h1>
     </div>
   </section>
+
+  <!-- ── SECTION LABEL ─────────────────────────────────── -->
+  <div class="section-label">
+    <p>One Fabric.&nbsp;&nbsp; Three Verticals.</p>
+  </div>
+
+  <!-- ── THREE VERTICALS ───────────────────────────────── -->
+  <div class="verticals-wrapper">
+  <div class="verticals-grid">
+
+    <!-- SeaWarden -->
+    <div class="vertical-card card-seawarden">
+      <div class="vertical-card-bg"></div>
+      <div class="vertical-card-overlay"></div>
+      <div class="vertical-card-content">
+        <p class="vertical-card-desc">
+          A multi-port, platform-independent distributed autonomy stack enabling
+          cohesive, carrier-like warfare through resilient swarm coordination—maintaining
+          mission coherence under attrition, sensor degradation, and communication loss.
+        </p>
+        <div class="vertical-card-title">SeaWarden</div>
+      </div>
+    </div>
+
+    <!-- Valak -->
+    <div class="vertical-card card-valak">
+      <div class="vertical-card-bg"></div>
+      <div class="vertical-card-overlay"></div>
+      <div class="vertical-card-content">
+        <p class="vertical-card-desc">
+          Decision support system enabling SeaWarden to anticipate adversary
+          trajectories and stay ahead in the future battlespace.
+        </p>
+        <div class="vertical-card-title">Valak</div>
+      </div>
+    </div>
+
+    <!-- Halqar -->
+    <div class="vertical-card card-halqar">
+      <div class="vertical-card-bg"></div>
+      <div class="vertical-card-overlay"></div>
+      <div class="vertical-card-content">
+        <p class="vertical-card-desc">
+          SeaWarden's kinetic arm, delivering autonomous target allocation and
+          coordinated multi-vector strikes without pilot risk.
+        </p>
+        <div class="vertical-card-title">Halqar</div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- end verticals-wrapper -->
+
+  <!-- ── BOTTOM FEATURE CARD (SeaWarden) ───────────────── -->
+  <section class="bottom-feature">
+    <div class="bottom-feature-bg"></div>
+    <div class="bottom-feature-overlay"></div>
+    <div class="bottom-feature-content">
+      <h2>Enlir Avant Système</h2>
+      <p>contact@enliravantsysteme.com</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer>
+    <p>&copy; 2025 Enlir Avant Système</p>
+    <p>Defense &nbsp;|&nbsp; Aviation &nbsp;|&nbsp; Energy Systems &nbsp;|&nbsp; Simulations &nbsp;|&nbsp; Semantic Systems</p>
+  </footer>
 
 </body>
 </html>
